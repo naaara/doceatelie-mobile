@@ -2,16 +2,11 @@ package com.doceatelie.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "cliente")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Cliente {
 
     @Id
@@ -49,6 +44,16 @@ public class Cliente {
     
     public Cliente() {}
     
+    
+    public Cliente(Long id, String nome, String email, String telefone, LocalDate dataNascimento, Boolean ativo, String cpf) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.dataNascimento = dataNascimento;
+        this.ativo = ativo;
+        this.cpf = cpf;
+    }
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
